@@ -18,7 +18,7 @@ function App() {
 
   return (
       <div className='App' id='map'>
-        <Map height={height} defaultCenter={[41.723259484493326, 44.78024091393848]} defaultZoom={14}>
+        <Map height={height} defaultCenter={[41.723259484493326, 44.78024091393848]} defaultZoom={12}>
           <Marker anchor={[41.714317442452355, 44.81111111698346]} width={100} onClick={() => handleMarkerClick([41.714317442452355, 44.81111111698346])} >
             <svg width={100} height={100} viewBox="0 0 61 71" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g style={{ pointerEvents: 'auto' }}>
