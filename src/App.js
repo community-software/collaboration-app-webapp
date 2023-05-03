@@ -3,6 +3,14 @@ import './App.css';
 import { MapContainer, TileLayer, Marker, Popup, useMap, Tooltip } from 'react-leaflet';
 import { useState, useEffect } from 'react';
 
+const position = [
+    40.18382656286346, 44.50937844086267
+]
+
+function Tag(props) {
+    return <div className='tag'><p>{props.children}</p></div>
+}
+
 function PointDescriptionPopup(props) {
     const [isOut, setIsOut] = useState(false)
 
@@ -12,13 +20,21 @@ function PointDescriptionPopup(props) {
     }
 
     return <div onClick={handleClose} className={`pointPopupWrapper ${isOut && 'out'}`}>
-        <div onClick={e => e.stopPropagation()} className={`pointPopupContent ${isOut && 'out'}`}></div>
+        <div onClick={e => e.stopPropagation()} className={`pointPopupContent ${isOut && 'out'}`}>
+            <h1>Биля</h1>
+            <div className='tags'>
+                <Tag>биллиард</Tag>
+                <Tag>бар</Tag>
+            </div>
+            <p>Аадуок дал тум длт дкуыл тмкым кыдлм кым ыкм уыкдлс ткымкы длыти ыкдлм ык суфдл ткыдм лыткс уфад ылм ткымдулт</p>
+            <a href={`https://www.google.com/maps/place/${position[0]},${position[1]}`}><p>Маршрут</p></a>
+        </div>
     </div>
 }
 
 function App() {
     const [height, setHeight] = useState(0);
-    const [isPopup, setPopup] = useState(false);
+    const [isPopup, setPopup] = useState(true);
 
     useEffect(() => {
         if (window.Telegram) {

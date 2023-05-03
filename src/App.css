@@ -66,10 +66,46 @@ div.pointPopupContent {
     border-top-right-radius: 20px;
     animation-name: in;
     animation-duration: 0.5s;
+    padding: 40px 30px;
+    box-sizing: border-box;
 }
 
 div.pointPopupContent.out {
     animation-name: out;
     animation-duration: 0.5s;
     transform: translateY(100%);
+}
+
+div.tag {
+    padding: 3px 10px 2px;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: rgb(116, 158, 242);
+}
+div.tag * {
+    line-height: 0;
+    font-size: 13px;
+}
+div.tag p {
+    color: white;
+    font-family: monospace;
+}
+div.tags {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+h1 {
+    line-height: 0;
+    font-family: Helvetica;
+}
+h2, h3, p {
+    line-height: 1;
+    font-family: Helvetica;
+}
+p {
+    font-size: 20px;
+}
+
+.flex-row {
 }
