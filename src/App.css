@@ -9,3 +9,7 @@ svg {
     font-size: 10px;
     text-align: center;
 }
+
+.leaflet-container {
+    height: 100vh;
+}
