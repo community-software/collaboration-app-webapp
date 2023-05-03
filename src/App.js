@@ -37,7 +37,7 @@ function PointDescriptionPopup(props) {
 
 function App() {
     const [height, setHeight] = useState(0);
-    const [isPopup, setPopup] = useState(true);
+    const [isPopup, setPopup] = useState(false);
 
     useEffect(() => {
         if (window.Telegram) {
