@@ -14,6 +14,9 @@ function Tag(props) {
 function PointDescriptionPopup(props) {
     const [isOut, setIsOut] = useState(false)
 
+    function openPosition(pos) {
+        window.open(`https://www.google.com/maps/place/${pos[0]},${pos[1]}`, '_blank').focus();
+    }
     function handleClose() {
         setIsOut(true)
         setTimeout(() => { props.onClose() }, 500)
@@ -27,7 +30,7 @@ function PointDescriptionPopup(props) {
                 <Tag>бар</Tag>
             </div>
             <p>Аадуок дал тум длт дкуыл тмкым кыдлм кым ыкм уыкдлс ткымкы длыти ыкдлм ык суфдл ткыдм лыткс уфад ылм ткымдулт</p>
-            <a href={`https://www.google.com/maps/place/${position[0]},${position[1]}`}><p>Маршрут</p></a>
+            <p className='link' onClick={() => openPosition(position)}>🚶Маршрут</p>
         </div>
     </div>
 }
