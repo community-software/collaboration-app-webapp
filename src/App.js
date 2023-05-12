@@ -42,7 +42,7 @@ function App() {
     useEffect(() => {
         if (window.Telegram) {
             setHeight(window.Telegram.WebApp.viewportHeight);
-            window.Telegram.isExpanded = true
+            window.Telegram.expand()
         }
     }, []);
 
@@ -59,7 +59,7 @@ function App() {
                         click: () => setPopup(true)
                     }}
                 >
-                    <Tooltip permanent>Tooltip for </Tooltip>
+                    <Tooltip permanent>Tooltip for 111 </Tooltip>
                 </Marker>
             </MapContainer>
             {isPopup && <PointDescriptionPopup onClose={() => setPopup(false)}></PointDescriptionPopup>}
