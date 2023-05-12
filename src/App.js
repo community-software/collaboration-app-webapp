@@ -38,11 +38,15 @@ function PointDescriptionPopup(props) {
 function App() {
     const [height, setHeight] = useState(0);
     const [isPopup, setPopup] = useState(false);
+    const [testData, setTestData] = useState(null)
 
     useEffect(() => {
-        if (window.Telegram) {
+        if (window.Telegram.WebApp) {
             setHeight(window.Telegram.WebApp.viewportHeight);
             window.Telegram.WebApp.expand()
+
+            setTestData(window.Telegram.Utils.urlParseQueryString(location.search))
+
         }
     }, []);
 
@@ -59,7 +63,7 @@ function App() {
                         click: () => setPopup(true)
                     }}
                 >
-                    <Tooltip permanent>Tooltip for 111 </Tooltip>
+                    <Tooltip permanent>Tooltip for 111 {testData || ''}</Tooltip>
                 </Marker>
             </MapContainer>
             {isPopup && <PointDescriptionPopup onClose={() => setPopup(false)}></PointDescriptionPopup>}
