@@ -42,7 +42,7 @@ function App() {
     useEffect(() => {
         if (window.Telegram) {
             setHeight(window.Telegram.WebApp.viewportHeight);
-            window.Telegram.expand()
+            window.Telegram.WebApp.expand()
         }
     }, []);
 
